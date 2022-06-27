@@ -27,4 +27,31 @@ $(document).ready(function(){
 	// End nav
 
 	// Start Header
+
+	// Start Properties
+
+	$('.propertylists').click(function(){
+
+		// for active item
+		// $(this).addClass(' activeitems').siblings().removeClass('activeitems');
+
+		 $(this).addClass(' activeitems');
+		 $(this).siblings().removeClass('activeitems');
+
+		 // for filter
+		 let getattvalue = $(this).attr("data-filter");
+		 // console.log(getattvalue);
+
+		 if(getattvalue === "all"){
+		 	$('.filters').show('slide',500);
+		 }else{
+
+		 	$('.filters').not('.'+getattvalue).hide('slide',500);
+
+		 	$('.filters').filter('.'+getattvalue).show('slide',500);
+
+		 }
+	});
+
+	// End Properties
 });
