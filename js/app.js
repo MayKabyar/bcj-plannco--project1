@@ -46,6 +46,8 @@ $(document).ready(function(){
 		 	$('.filters').show('slide',500);
 		 }else{
 
+		 	$('.filters').hide();
+
 		 	$('.filters').not('.'+getattvalue).hide('slide',500);
 
 		 	$('.filters').filter('.'+getattvalue).show('slide',500);
@@ -53,5 +55,30 @@ $(document).ready(function(){
 		 }
 	});
 
+
+	lightbox.option({
+		showImageNumberLabel:false
+	});
+
 	// End Properties
+
+	// Start Adv Section
+
+	$(window).scroll(function(){
+
+	let getscrolltop = $(this).scrollTop();
+	// console.log(getscrolltop);
+
+	if(getscrolltop >= 900){
+		$('.advimages').addClass('fromlefts');
+		$('.advtexts').addClass('fromrights');
+	}else{
+		$('.advimages').removeClass('fromlefts');
+		$('.advtexts').removeClass('fromrights');
+	}
+
+
+	});
+
+	// End Adv Section
 });
